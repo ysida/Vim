@@ -78,6 +78,8 @@ export class Configuration implements IConfiguration {
   disableExtension = false;
   enableNeovim = false;
   neovimPath = 'nvim';
+  enableVimrc = false;
+  vimrcPath = '';
   substituteGlobalFlag = false;
   cursorStylePerMode: IModeSpecificStrings<string> = {
     normal: 'line',
