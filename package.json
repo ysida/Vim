@@ -710,14 +710,14 @@
           "default": "",
           "scope": "machine"
         },
-        "vim.enableVimrc": {
+        "vim.vimrc.enable": {
           "type": "boolean",
-          "description": "Use key mappings from a .vimrc file",
+          "description": "Use key mappings from a .vimrc file.",
           "default": "true"
         },
-        "vim.vimrcPath": {
+        "vim.vimrc.path": {
           "type": "string",
-          "description": "Path to a Vim configuration file. If unset, it will check for $HOME/.vimrc or $HOME/_vimrc"
+          "description": "Path to a Vim configuration file. If unset, it will check for $HOME/.vimrc or $HOME/_vimrc."
         },
         "vim.substituteGlobalFlag": {
           "type": "boolean",
