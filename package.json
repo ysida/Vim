@@ -710,6 +710,15 @@
           "default": "",
           "scope": "machine"
         },
+        "vim.enableVimrc": {
+          "type": "boolean",
+          "description": "Use key mappings from a .vimrc file",
+          "default": "true"
+        },
+        "vim.vimrcPath": {
+          "type": "string",
+          "description": "Path to a Vim configuration file. If unset, it will check for $HOME/.vimrc or $HOME/_vimrc"
+        },
         "vim.substituteGlobalFlag": {
           "type": "boolean",
           "markdownDescription": "Automatically apply the global flag, `/g`, to substitute commands. When set to true, use `/g` to mean only first match should be replaced.",
@@ -859,6 +868,7 @@
     "appdirectory": "0.1.0",
     "diff-match-patch": "1.0.4",
     "lodash.escaperegexp": "4.1.2",
+    "fs": "0.0.1-security",
     "mkdirp": "0.5.1",
     "neovim": "4.5.0",
     "untildify": "4.0.0",
