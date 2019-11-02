@@ -391,6 +391,18 @@ export async function activate(context: vscode.ExtensionContext) {
     toggleExtension(configuration.disableExtension, compositionState);
   });
 
+  registerCommand(context, 'vim.flutter.commentWidget', async () => {
+    await vscode.commands.executeCommand('editor.action.formatDocument');
+    const mh = await getAndUpdateModeHandler();
+    await mh.handleMultipleKeyEvents(['<Esc>']);
+    await mh.handleMultipleKeyEvents('])lxph%Bi//\nContainer()'.split(''));
+    await mh.handleMultipleKeyEvents(['<Esc>']);
+    await mh.handleMultipleKeyEvents('pa\n//\n/*\n'.split(''));
+    await mh.handleMultipleKeyEvents(['<Esc>']);
+    await mh.handleMultipleKeyEvents('ww%la\n*/\n//\n'.split(''));
+    await vscode.commands.executeCommand('editor.action.formatDocument');
+  });
+
   for (const boundKey of configuration.boundKeyCombinations) {
     registerCommand(context, boundKey.command, () => handleKeyEvent(`${boundKey.key}`));
   }
